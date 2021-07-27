@@ -1,0 +1,634 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: black;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-content: center;
+    background-color: white;
+}
+
+
+#logo {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 18%;
+}
+
+#navbar {
+    position: absolute;
+    left: 28%;
+    margin-top: 3.5%;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    list-style: none;
+    font-size: 120%;
+    z-index: 10;
+}
+
+#navbar li {
+    padding-right: 15%;
+}
+
+#navbar li a {
+    text-decoration: none;
+    color: white;
+    cursor:pointer;
+}
+
+#developer {
+    position: absolute;
+    font-size: 300%;
+    top: 5%;
+    right: 2%;
+    font-family: 'Bebas Neue', cursive;
+    /* font-family: 'Courier New', Courier, monospace; */
+    color: #f2e61a;
+}
+
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    transform-style: preserve-3d;
+}
+
+.mac {
+    position: absolute;
+    width: 45%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    position: absolute;
+    top: 60%;
+    transform-style: preserve-3d;
+    animation: animateText 20s linear infinite;
+    padding: 0 auto;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+.circle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: rgba(0, 0, 0, 0);
+    color: #f2e61a;
+    font-size: 5em;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    padding: 5px 11px;
+    transform: rotateY(calc(var(--i)* calc(360deg/44))) translateZ(250px);
+}
+
+@keyframes animateText {
+    0% {
+        transform: perspective(1000px) rotateY(360deg) rotateX(15deg) translateY(-30px);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateY(0deg) rotateX(15deg) translateY(-30px);
+    }
+
+}
+
+.circle .char {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0);
+    color: #F2E61a;
+    padding: 0px 0px;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transform: rotateY(calc(var(--char-index) * 8.2deg)) translateZ(250px);
+}
+
+#about {
+    position: absolute;
+    display: none;
+    flex-wrap: wrap;
+    top: 15%;
+    left: 2.5%;
+    align-self: center;
+    justify-self: center;
+    height: 80%;
+    width: 95%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 4px solid rgba(112, 112, 112, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.closeAll {
+    position: absolute;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(112, 112, 112, 1);
+    right: 0;
+    padding: .5% 1%;
+    cursor: pointer;
+}
+
+.closeAll span {
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+#about .close {
+    position: absolute;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    right: 0;
+    padding: 0% 3%;
+    width: 100%;
+    text-align: center;
+    line-height: 22px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#about .close h2 {
+    text-align: center;
+    line-height: 22px;
+    font-size: 120%;
+    position: absolute;
+    margin-top: .4%;
+    color: rgba(112, 112, 112, 1);
+}
+
+#about .close div {
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin-top: .4%;
+    text-align: center;
+    line-height: 30px;
+}
+
+#about .close div h3 {
+    text-align: center;
+    line-height: 15px;
+    position: flex;
+    margin-right: 10px;
+    justify-self: center;
+    align-self: center;
+    padding: 0px 0px 0px 0px;
+    width: 20px;
+    height: 20px;
+    border: 2px outset rgba(112, 112, 112, 1);
+    background: rgba(112, 112, 112, 1);
+}
+
+#aboutLucas .head {
+    background: linear-gradient(to right, #f2e61a, black);
+    width: 100%;
+    height: 7%;
+    align-content: center;
+}
+
+#aboutLucas {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    background: rgb(221, 221, 221);
+    top: 3%;
+    left: 2%;
+    width: 60%;
+    height: 85%;
+    border: 4px outset grey;
+    z-index: 2;
+}
+
+#aboutLucas:hover {
+    z-index: 10;
+}
+
+#info {
+    position: absolute;
+    display: flex;
+    width: 90%;
+    height: 83%;
+    top: 12%;
+    left: 3%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#info button {
+    position: absolute;
+    font-size: 15px;
+    text-justify: auto;
+    top: 0%;
+    right:0%;
+    width: 20%;
+    height: 8%;
+    border-radius: 0;
+    font-family: 'Courier New', Courier, monospace;
+    border-image-slice: 1;
+    border-width: 4px;
+    background: none;
+}
+#info a button{
+    position: absolute;
+    font-size: 15px;
+    text-justify: auto;
+    top: 9%;
+    right:0%;
+    width: 20%;
+    height: 8%;
+    border-radius: 0;
+    font-family: 'Courier New', Courier, monospace;
+    border-image-slice: 1;
+    border-width: 4px;
+    background: none;
+}
+
+#skills {
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+}
+
+#skill {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+#skill img {
+    width: 40px;
+    margin-right: 20px;
+}
+
+#skill h3 {
+    margin-left: 10px;
+}
+
+.skillLevel {
+    width: 300px;
+    height: 20px;
+    border: 4px outset rgba(112, 112, 112, 1);
+    padding: 2px;
+}
+
+#skills #skill .skillmeter {
+    animation: load 4s normal forwards;
+    height: 100%;
+    background-image: linear-gradient(to right, black, #f2e61a);
+}
+
+@keyframes load {
+    0% { width: 0; }
+  }
+
+#skills #skill:nth-child(1) .skillmeter {
+    width: 25%;
+}
+
+#skills #skill:nth-child(2) .skillmeter:nth-child(1) {
+    width: 35%;
+}
+
+#skills #skill:nth-child(3) .skillmeter {
+    width: 25%;
+}
+
+#skills #skill:nth-child(4) .skillmeter {
+    width: 30%;
+}
+
+#skills #skill:nth-child(5) .skillmeter {
+    width: 2%;
+}
+
+
+
+#skills {
+    display: flex;
+    margin-top: 5%;
+    align-items: center;
+}
+
+#info button:hover {
+    background: black;
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+}
+
+#photo {
+    position: relative;
+    height: 100%;
+    transform: scaleX(-1);
+    margin-right: 20px;
+}
+
+/*  */
+
+#info p:nth-child(2) {
+    margin-top: 25%;
+}
+
+#info select {
+    background: rgba(221, 221, 221, 1);
+    border: 2px solid rgb(113, 109, 168);
+    width: 180%;
+}
+
+#run {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    background: rgb(221, 221, 221);
+    top: 75%;
+    left: 10%;
+    width: 42%;
+    height: 30%;
+    border: 4px outset rgb(4, 1, 254);
+    z-index: 3;
+}
+
+#run .head {
+    background: rgb(4, 1, 254);
+    width: 100%;
+    height: 15%;
+    align-content: center;
+    justify-content: center;
+}
+
+#run .close {
+    position: absolute;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    right: 0;
+    padding: 0% 3%;
+    width: 100%;
+}
+
+#run .close h2 {
+    font-size: 100%;
+    position: absolute;
+    left: 48%;
+    color: white;
+}
+
+#run div {
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2%;
+}
+
+#run input {
+    width: 88%;
+}
+
+#about #code {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    background: rgb(221, 221, 221);
+    top: 45%;
+    left: 60%;
+    width: 20%;
+    height: 60%;
+    border: 4px outset grey;
+    z-index: 1;
+}
+
+#about #code:hover {
+    z-index: 10;
+}
+
+#code .head {
+    background: linear-gradient(to right, #f2e61a, black);
+    width: 100%;
+    height: 9%;
+    padding-top: 1px;
+    align-content: center;
+}
+
+#code #info {
+    width: 90%;
+    margin-left: 5%;
+    color: black;
+    overflow: scroll;
+    font-size: 12px;
+}
+
+
+#about #contact {
+    display: none;
+    flex-wrap: wrap;
+    position: absolute;
+    background: rgb(221, 221, 221);
+    top: 0%;
+    left: 35%;
+    width: 30%;
+    height: 100%;
+    border: 4px outset grey;
+    z-index: 10;
+    justify-content: center;
+    justify-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#contact .head {
+    background: linear-gradient(to right, #f2e61a, black);
+    width: 100%;
+    height: 6%;
+    align-content: center;
+}
+
+#contact ul {
+    margin: 15px 0px 15px 0;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+#contact img {
+    width: 3vw;
+    height: 3vw;
+    margin-right: 1vw;
+    filter: invert(54%) sepia(0%) saturate(746%) hue-rotate(151deg) brightness(92%) contrast(81%);
+}
+
+#contact button {
+    height: 6%;
+    width: 50%;
+    font-family: 'Courier New';
+}
+
+
+#contact form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 80%;
+    color: black;
+    font-size: 12px;
+    justify-content: center;
+}
+
+#contact label {
+    width: 100%;
+    font-size: 18px;
+}
+
+#contact input {
+    width: 100%;
+    height: 5%;
+}
+
+#contact textarea {
+    height: 28%;
+    width: 100%;
+}
+
+#projects {
+    position: absolute;
+    display: none;
+    flex-wrap: wrap;
+    top: 15%;
+    left: 2.5%;
+    align-self: center;
+    justify-self: center;
+    height: 80%;
+    width: 95%;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    border: 4px solid grey;
+    backdrop-filter: blur(10px);
+}
+
+
+#projects .title {
+    color: #f2e61a;
+    display: flex;
+    position: absolute;
+    align-self: center;
+    justify-content: center;
+    font-size: 200%;
+    width: 50%;
+}
+
+#projects .title h1 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+#projects .title h2 {
+    color: #f2e61a;
+    display: flex;
+    top: 50%;
+    left: 25%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#projects .projectList {
+    color: #f2e61a;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    align-self: center;
+    justify-content: center;
+    font-size: 200%;
+    width: 50%;
+    height: 100%;
+    left: 48%;
+    padding: 1% 0 0 1%;
+    justify-content: center;
+}
+
+#projects .projectList div {
+    width: 90%;
+    height: 30%;
+    background-color: rgb(22, 22, 22);
+}
+
+#rings {
+    position: absolute;
+    top: -30%;
+    left: 75%;
+    display: flex;
+    min-height: 100vh;
+    transform-style: preserve-3d;
+    z-index: 9;
+}
+
+.ring {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    animation: animateRings 20s linear infinite;
+    padding: 0 auto;
+    font-size: 5em;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.ring:nth-child(2) {
+    animation: animateRings 15s linear infinite;
+    top: 40%;
+}
+
+.ring:nth-child(3) {
+    animation: animateRings 10s linear infinite;
+    top: 50%;
+}
+
+.ring span {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    background: rgba(0, 0, 0, 0);
+    color: rgba(242, 230, 26, 1);
+    transform-origin: center;
+    padding: 5px 9px;
+    transform: rotateY(calc(var(--i)* calc(360deg/22))) translateZ(100px);
+}
+
+.ring:nth-child(2) span {
+    opacity: .7;
+    transform: rotateY(calc(var(--i)* calc(360deg/22))) translateZ(100px);
+}
+
+.ring:nth-child(3) span {
+    opacity: .4;
+    transform: rotateY(calc(var(--i)* calc(360deg/22))) translateZ(100px);
+}
+
+@keyframes animateRings {
+    0% {
+        transform: rotateY(360deg) rotateZ(15deg);
+    }
+
+    100% {
+        transform: rotateY(0deg) rotateZ(15deg);
+    }
+
+}
